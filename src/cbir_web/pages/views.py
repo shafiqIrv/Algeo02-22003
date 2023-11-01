@@ -19,6 +19,6 @@ def how_to_use(request):
     return HttpResponse(template.render())
 
 
-def konsep(request):
-    template = loader.get_template("pages/konsep.html")
+def concept(request):
+    template = loader.get_template("pages/concept.html")
     return HttpResponse(template.render())
