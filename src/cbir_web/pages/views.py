@@ -5,20 +5,16 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    template = loader.get_template("pages/index.html")
-    return HttpResponse(template.render())
+    return render(request, "pages/index.html")
 
 
 def about_us(request):
-    template = loader.get_template("pages/about_us.html")
-    return HttpResponse(template.render())
+    return render(request, "pages/about_us.html")
 
 
 def how_to_use(request):
-    template = loader.get_template("pages/how_to_use.html")
-    return HttpResponse(template.render())
+    return render(request, "pages/how_to_use.html")
 
 
 def concept(request):
-    template = loader.get_template("pages/concept.html")
-    return HttpResponse(template.render())
+    return render(request, "pages/concept.html")

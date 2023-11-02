@@ -6,17 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Web CBIR">
     <meta name="keywords" content="Web CBIR">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <link rel="stylesheet" href="{% static 'pages/normalize.css' %}" />
     <link rel="stylesheet" href="{% static 'pages/global.css' %}" />
+    {% block style %}
+    {% endblock style %}
     <title>
       {% block title %}
       {% endblock title %}
     </title>
   </head>
-  <body class="container">
+  <body>
     <header>
       <nav class="nav">
         <div>
-          <a href="{% url "index" %}">Home</a>
+          <a href="{% url "index" %}">
+            <img src="{% static 'images/logo.png' %}"
+                 alt="Logo"
+                 height="48"
+                 width="48">
+          </a>
         </div>
         <div class="right">
           <a href="{% url "how_to_use" %}">How To Use</a>
@@ -25,7 +36,9 @@
         </div>
       </nav>
     </header>
-    {% block content %}
-    {% endblock content %}
+    <div class="base-container">
+      {% block content %}
+      {% endblock content %}
+    </div>
   </body>
 </html>

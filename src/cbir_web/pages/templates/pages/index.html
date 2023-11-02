@@ -1,10 +1,53 @@
 {% extends "./base.html" %}
 {% load static %}
+{% block style %}
+  <link rel="stylesheet" href="{% static "pages/index.css" %}">
+{% endblock style %}
 {% block title %}
   Landing Page
 {% endblock title %}
 {% block content %}
-  <div>
-    <h1>Ini Landing Page</h1>
+  <div class="index-container">
+    <div class="header">
+      <img src="{% static "images/logo.png" %}" alt="Logo" width="96" height="96">
+      <h1>REVERSE IMAGE SEARCH</h1>
+    </div>
+    <div class="main-container">
+      <main>
+        INI FOTO
+      </main>
+      <aside class="upload-image">
+        <input class="input-image"
+               type="file"
+               name="image"
+               id="input-image"
+               accept="image/*">
+        <div class="upload-box">
+          <label for="input-image">
+            <p>Insert Image</p>
+            <p>Here</p>
+          </label>
+          <img src="{% static 'images/upload.png' %}"
+               alt="Upload"
+               width="96"
+               height="96">
+        </div>
+        <form class="search-form">
+          <button type="button" name="button" id="button">Search</button>
+          <select class="form-select" name="cbir_mode" id="cbir_mode">
+            <option selected value="color">Color</option>
+            <option value="texture">Texture</option>
+          </select>
+        </form>
+      </aside>
+    </div>
+    <div class="upload-dataset">
+      <input class="input-folder"
+             type="file"
+             name="image"
+             id="input-folder"
+             accept="image/*">
+      <label class="label-folder" for="input-folder">UPLOAD DATASET</label>
+    </div>
   </div>
 {% endblock content %}
