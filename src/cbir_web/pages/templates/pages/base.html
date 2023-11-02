@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Web CBIR">
+    <meta name="keywords" content="Web CBIR">
+    <link rel="stylesheet" href="{% static 'pages/global.css' %}" />
+    <title>
+      {% block title %}
+      {% endblock title %}
+    </title>
+  </head>
+  <body class="container">
+    <header>
+      <nav class="nav">
+        <div>
+          <a href="{% url "index" %}">Home</a>
+        </div>
+        <div class="right">
+          <a href="{% url "how_to_use" %}">How To Use</a>
+          <a href="{% url "concept" %}">Concept</a>
+          <a href="{% url "about_us" %}">About Us</a>
+        </div>
+      </nav>
+    </header>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>

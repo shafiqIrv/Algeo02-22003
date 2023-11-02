@@ -1,0 +1,13 @@
+.container {
+    margin: 4rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .right {
+    display: flex;
+    gap: 2rem;
+}
