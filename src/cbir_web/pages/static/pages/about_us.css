@@ -1,0 +1,18 @@
+.aboutus_title{
+    display: flex;
+    justify-content: center;
+}
+
+.aboutus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #C6AA63;
+    font-size: 30px;
+}
+
+
+
+.profile_container{
+    display: flex;
+}

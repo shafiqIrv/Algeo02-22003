@@ -1,13 +1,28 @@
-{% extends "./base.html" %}
-{% load static %}
-{% block style %}
-<link rel="stylesheet" href="{% static "pages/about_us.css" %}">
-{% endblock style %}
-{% block title %}
-  About Us
-{% endblock title %}
-{% block content %}
-  <div>
-    <h1>About Us Page</h1>
+{% extends "./base.html" %} {% load static %} {% block style %} <link
+rel="stylesheet" href="{% static "pages/about_us.css" %}"> {% endblock style %}
+{% block title %} About Us {% endblock title %} {% block content %}
+<div>
+  <div class="aboutus_title">
+    <div class="aboutus">
+      <img src="{% static "images/logo.png" %}" alt="Logo" width="96"
+      height="96">
+      <h1>About Us</h1>
+    </div>
   </div>
+
+  <div class="profile_container">
+    <div>
+      <img src="{% static "images/PP Shafiq.png" width 400 %}" alt="Logo">
+      <div>"Stress dikit ga ngaruh"</div>
+    </div>
+    <div>
+      <img src="{% static "images/PP Ucup.png" %}" alt="Logo">
+      <div>"Bismillah ga mokad"</div>
+    </div>
+    <div>
+      <img src="{% static "images/PP Bacin.png" %}" alt="Logo">
+      <div>"Ambatukaaaaaam"</div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
