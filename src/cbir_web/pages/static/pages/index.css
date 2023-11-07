@@ -25,8 +25,8 @@
 
 .main-container{
     display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    justify-content: center;
+    gap: 24rem;
     align-items: center;
     color: var(--text-secondary);
     margin-bottom: 8rem;
@@ -108,4 +108,8 @@
 .label-folder:hover{
     cursor: pointer;
     background-color: var(--ternary);
+}
+
+.image-container{
+    background-color: white;
 }
