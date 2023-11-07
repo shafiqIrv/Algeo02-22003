@@ -1,13 +1,43 @@
-{% extends "./base.html" %}
-{% load static %}
-{% block style %}
-<link rel="stylesheet" href="{% static "pages/about_us.css" %}">
-{% endblock style %}
-{% block title %}
-  About Us
-{% endblock title %}
-{% block content %}
-  <div>
-    <h1>About Us Page</h1>
+{% extends "./base.html" %} {% load static %} {% block style %} <link
+rel="stylesheet" href="{% static "pages/about_us.css" %}"> {% endblock style %}
+{% block title %} About Us {% endblock title %} {% block content %}
+<div>
+  <div class="aboutus_title">
+    <div class="aboutus">
+      <img src="{% static "images/logo.png" %}" alt="Logo" width="96"
+      height="96">
+      <h1>ABOUT US</h1>
+    </div>
   </div>
+
+  <div class="profile_container">
+    <div class="info">
+      <img src="{% static "images/PP Shafiq.png"%}" alt="Shafiq Irvansyag"
+      width= "350">
+      <div class="isi">
+        <div>13522003</div>
+        <div>Shafiq Irvansyah</div>
+        <div>"Stress dikit ga ngaruh"</div>
+      </div>
+    </div>
+    <div class="info" id="ucup">
+      <img src="{% static "images/PP Ucup.png" %}" alt="Yusuf A.S." width=
+      "400">
+      <div class="isi">
+        <div>13522015</div>
+        <div>Yusuf Ardian Sandi</div>
+        <div>"Bismillah ga mokad"</div>
+      </div>
+    </div>
+    <div class="info">
+      <img src="{% static "images/PP Bacin.png" %}" alt="Ahmad Naufal" width=
+      "350">
+      <div class="isi">
+        <div>13522005</div>
+        <div>Ahmad Naufal Ramadan</div>
+        <div>"Ambatukaaaaaam"</div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
