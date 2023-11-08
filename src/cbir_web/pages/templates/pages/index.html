@@ -14,19 +14,23 @@
     </div>
     <div class="main-container">
       <main class="image-container">
-        <img src="{% static 'images/screenshot.svg' %}"
-             alt="Logo"
-             width="400"
-             height="400">
+        {% if image %}
+          <img src="{% static 'media/test.jpg' %}"
+               alt="Image"
+               width="400"
+               height="400">
+        {% else %}
+          <img src="{% static 'images/screenshot.svg' %}"
+               alt="Logo"
+               width="400"
+               height="400">
+        {% endif %}
       </main>
-      <aside class="upload-image">
-        <input class="input-image"
-               type="file"
-               name="image"
-               id="input-image"
-               accept="image/*">
+      <form method="post" enctype="multipart/form-data" class="upload-image">
+        {% csrf_token %}
+        {{ form.as_p }}
         <div class="upload-box">
-          <label for="input-image">
+          <label for="id_file">
             <p>Insert Image</p>
             <p>Here</p>
           </label>
@@ -35,22 +39,20 @@
                width="96"
                height="96">
         </div>
-        <form class="search-form">
-          <button type="button" name="button" id="button">Search</button>
+        <div class="search-form">
+          <button type="submit" name="button" id="button">Search</button>
           <select class="form-select" name="cbir_mode" id="cbir_mode">
             <option selected value="color">Color</option>
             <option value="texture">Texture</option>
           </select>
-        </form>
-      </aside>
+        </div>
+      </form>
     </div>
-    <div class="upload-dataset">
-      <input class="input-folder"
-             type="file"
-             name="image"
-             id="input-folder"
-             accept="image/*">
-      <label class="label-folder" for="input-folder">UPLOAD DATASET</label>
-    </div>
+    <form method="post" enctype="multipart/form-data" class="upload-dataset">
+      {% csrf_token %}
+      {{ dataset_form.as_p }}
+      {% comment %} <input class="input-folder" type="file" name="image" id="input-folder" accept="image/*"> {% endcomment %}
+      <button type="submit" class="label-folder">UPLOAD DATASET</button>
+    </form>
   </div>
 {% endblock content %}
