@@ -1,13 +1,23 @@
-{% extends "./base.html" %}
-{% load static %}
+{% extends "./base.html" %} {% load static %}
 {% block style %}
-  <link rel="stylesheet" href="{% static "pages/how_to_use.css" %}">
+<link rel="stylesheet" href="{% static "pages/how_to_use.css" %}">
 {% endblock style %}
-{% block title %}
-  How To Use
-{% endblock title %}
+
+{% block title %} How To Use {% endblock title %}
 {% block content %}
-  <div>
-    <h1>How To Use Page</h1>
-  </div>
+<div>
+  <h1>Guide to use this tool</h1>
+  <ol class="langkah">
+    <li>Klik tombol “Upload Dataset” dan pilih dataset gambar dalam bentuk folder yang berisi kumpulan gambar.</li>
+    <img src="{% static "images/step_1.png" %}" alt="Ilustration of Step 1">
+    <li>Drag file gambar yang ingin kamu cari ke “Insert Image Here”.</li>
+    <img src="{% static "images/step_2.png" %}" alt="Ilustration of Step 2">
+    <li>Pilih opsi pencarian berdasarkan warna atau tekstur.</li>
+    <img src="{% static "images/step_3.png" %}" alt="Ilustration of Step 3">
+    <li>Tekan tombol search untuk mencari gambar.</li>
+    <img src="{% static "images/step_4.png" %}" alt="Ilustration of Step 4">
+    <li>Gambar telah selesai dicari.</li>
+    <img src="{% static "images/step_5.png" %}" alt="Ilustration of Step 5">
+  </ol>
+</div>
 {% endblock content %}
