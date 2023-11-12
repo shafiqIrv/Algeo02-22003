@@ -3,11 +3,33 @@
 {% block style %}
   <link rel="stylesheet" href="{% static "pages/concept.css" %}">
 {% endblock style %}
-{% block title %}
-  Concept
-{% endblock title %}
+{% block title %}Concept{% endblock title %}
 {% block content %}
-  <div>
-    <h1>Concept Page</h1>
+<div>
+  <h1>Concept Page</h1>
+  <h2>Content-Based Information Retrieval (CBIR)</h2>
+  <div class="teks_cbir">
+    <p>
+      Pada tools ini, kami menggunakan CBIR. CBIR adalah proses mencari gambar berdasarkan kontennya, bukan teks atau kata kunci. Namun, pada website ini kami hanya menyediakan pencarian berdasarkan dua pilihan, yaitu warna atau tekstur. Proses CBIR ini melibatkan langkah-langkah berikut:
+      <ul>
+        <li>Ekstraksi fitur-fitur penting dari gambar, seperti warna, tekstur, dan bentuk.</li>
+        <li>Representasi fitur-fitur tersebut dalam bentuk vektor atau deskripsi numerik.</li>
+        <li>Pencocokan vektor-fitur gambar yang dicari dengan vektor-fitur gambar dalam dataset menggunakan algoritma tertentu.</li>
+        <li>Pengurutan dan penampilan gambar yang paling mirip dengan gambar yang dicari.</li>
+      </ul>
+      CBIR membantu pengguna mengakses dan mengeksplorasi koleksi gambar dengan lebih efisien, karena berdasarkan kesamaan nilai citra visual antara gambar-gambar tersebut.
+    </p>
+  </div>
+  <h2>Pencarian Berdasarkan Warna</h2>
+  <div class="teks_warna">
+    <p>
+      Ceritanya ini teks yang nge jelasin gimana teknis algoritma yang kita pake untuk mencocokkan suatu warna gambar dengan gambar lainnya</div>
+    </p>
+  </div>
+  <h2>Pencarian Berdasarkan Tekstur</h2>
+  <div  class="teks_tekstur">
+    <p>
+      Ceritanya ini teks yang nge jelasin gimana teknis algoritma yang kita pake untuk mencocokkan suatu tekstur gambar dengan gambar lainnya
+    </p>
   </div>
 {% endblock content %}

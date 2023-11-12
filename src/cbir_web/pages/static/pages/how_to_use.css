@@ -1,0 +1,32 @@
+h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #C6AA63;
+    font-size: 50px;
+    filter: drop-shadow(3px 3px 3px #1a1a1a);
+}
+
+.langkah_container { 
+    display: flex;
+    flex-direction: column;
+}
+
+.langkah {
+    margin-left: 100px;
+}
+
+.foto_langkah {
+    width: 700px;
+    background-color: white;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 30px;
+    margin-left: 100px;
+}
+
+.div_langkah {
+    display: flex;
+    align-items: center;
+}

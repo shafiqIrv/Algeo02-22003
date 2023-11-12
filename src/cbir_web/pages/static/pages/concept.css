@@ -1,0 +1,25 @@
+h1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #C6AA63;
+    font-size: 50px;
+    filter: drop-shadow(3px 3px 3px #1a1a1a);
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.teks_cbir {
+    margin-left: 20px;
+}
+
+.teks_warna {
+    margin-left: 20px;
+}
+
+.teks_tekstur {
+    margin-left: 20px;
+}
