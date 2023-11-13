@@ -112,6 +112,7 @@
 }
 
 .label-folder {
+    color: var(--text-primary);
     background-color: var(--secondary);
     padding: 0.75rem 0;
     border-radius: 32px;
@@ -126,4 +127,55 @@
 
 .image-container{
     background-color: white;
+}
+
+.pagination{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-accent);
+    margin-bottom: 4rem;
+}
+
+.divider{
+    flex-grow:1;
+    height: 4px;
+    background-color: var(--text-secondary);
+}
+
+.step-links{
+    padding: 1rem 2rem;
+    background-color: var(--secondary);
+    display: flex;
+    gap: 2rem;
+    border-radius: 64px;
+}
+
+.step-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--text-primary);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.current{
+    display: flex;
+    align-items: center;
+    background-color: var(--text-primary);
+    padding: 0 2rem;
+    border-radius: 32px;
+}
+
+.query{
+    margin-bottom: 8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.query img{
+    object-fit: cover;
 }
