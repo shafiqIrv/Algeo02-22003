@@ -48,10 +48,33 @@
         </div>
       </form>
     </div>
+    {% if page_obj %}
+      <div class="pagination">
+        <div class="divider"></div>
+        <span class="step-links">
+          {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">&lt</a>
+          {% else %}
+            <a href="#">&lt</a>
+          {% endif %}
+          <span class="current">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+          {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">&gt</a>
+          {% else %}
+            <a href="#">&gt</a>
+          {% endif %}
+        </span>
+        <div class="divider"></div>
+      </div>
+      <div class="query">
+        {% for file in page_obj %}
+          <img src="{% static file %}" alt="query" width="480" height="280" />
+        {% endfor %}
+      </div>
+    {% endif %}
     <form method="post" enctype="multipart/form-data" class="upload-dataset">
       {% csrf_token %}
       {{ dataset_form.as_p }}
-      {% comment %} <input class="input-folder" type="file" name="image" id="input-folder" accept="image/*"> {% endcomment %}
       <button type="submit" class="label-folder">UPLOAD DATASET</button>
     </form>
   </div>

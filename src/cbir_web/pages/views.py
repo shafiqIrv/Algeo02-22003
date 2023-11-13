@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .forms import ImageForm, UploadFileForm
 from .models import Dataset
 import os
+from django.core.paginator import Paginator
 
 MEDIA_ROOT = "pages/static/media/"
 
@@ -11,6 +12,11 @@ def index(request):
     files = Dataset.objects.all()
     form = ImageForm(request.POST, request.FILES)
     dataset_form = UploadFileForm(request.POST, request.FILES)
+    dataset_files = os.listdir(MEDIA_ROOT + "dataset/")
+    dataset_files = list(map(lambda x: "media/dataset/" + x, dataset_files))
+    paginator = Paginator(dataset_files, 6)
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
     if request.method == "POST":
         if "image_form" in request.POST:
             if form.is_valid():
@@ -25,7 +31,7 @@ def index(request):
                         "form": form,
                         "dataset_form": dataset_form,
                         "image": "media/test.jpg",
-                        "files": files,
+                        "files": dataset_files,
                     },
                 )
         elif "dataset_form" in request.POST:
@@ -44,11 +50,13 @@ def index(request):
                         "form": form,
                         "dataset_form": dataset_form,
                         "image": "media/test.jpg",
-                        "files": files,
+                        "files": dataset_files,
                     },
                 )
     else:
         form = ImageForm()
+
+    print(page_obj)
 
     return render(
         request,
@@ -57,7 +65,7 @@ def index(request):
             "form": form,
             "dataset_form": dataset_form,
             "image": "media/test.jpg",
-            "files": files,
+            "page_obj": page_obj,
         },
     )
 
