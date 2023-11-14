@@ -128,4 +128,4 @@ import os
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "pages/static/media")
 
-DATA_UPLOAD_MAX_NUMBER_FILES = None
+DATA_UPLOAD_MAX_NUMBER_FILES = 1500

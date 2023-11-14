@@ -67,9 +67,15 @@
         <div class="divider"></div>
       </div>
       <div class="query">
-        {% for file in page_obj %}
-          <img src="{% static file %}" alt="query" width="480" height="280" />
+        {% for query in page_obj %}
+          <div class="query-image">
+            <img src="{% static query.file %}" alt="query" width="480" height="280" />
+            <p>Similarity: {{ query.percentage }}%</p>
+          </div>
         {% endfor %}
+      </div>
+      <div class="time-taken">
+        <p>Time taken: {{ time_taken }} seconds</p>
       </div>
     {% endif %}
     <form method="post" enctype="multipart/form-data" class="upload-dataset">
