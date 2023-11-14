@@ -1,3 +1,0 @@
-# Test
-
-Gambar untuk pengujian
