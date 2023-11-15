@@ -17,6 +17,10 @@ JSON_ROOT = "pages/static/json/"
 # Texture
 def img_to_grayscale(image_path):
     img = np.array(Image.open(image_path))
+
+    if len(img.shape) == 2:
+        img = np.array([img])
+
     rgb_channels = img[..., :3]
 
     grayscale = np.dot(rgb_channels, [0.299, 0.587, 0.114]).astype(int)
