@@ -355,9 +355,15 @@ def index(request):
                 for uploaded_file in request.FILES.getlist("files"):
                     Dataset.objects.create(file=uploaded_file)
 
-                os.remove(JSON_ROOT + "texture.json")
-                os.remove(JSON_ROOT + "result.json")
-                os.remove(JSON_ROOT + "time.json")
+                jsons = os.listdir(JSON_ROOT)
+                if "color.json" in jsons:
+                    os.remove(JSON_ROOT + "color.json")
+                if "texture.json" in jsons:
+                    os.remove(JSON_ROOT + "texture.json")
+                if "result.json" in jsons:
+                    os.remove(JSON_ROOT + "result.json")
+                if "time.json" in jsons:
+                    os.remove(JSON_ROOT + "time.json")
 
                 return render(
                     request,
