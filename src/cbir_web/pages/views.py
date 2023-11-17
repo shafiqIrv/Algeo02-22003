@@ -162,6 +162,9 @@ def index(request):
 
     query = list()
 
+    page_obj = {}
+    time_taken = 0
+
     if "result.json" in list_dir:
         with open(JSON_ROOT + "result.json", "r") as f:
             result = json.load(f)
