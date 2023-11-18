@@ -50,20 +50,26 @@ def cosine_similarity(vector_a, vector_b):
     return similarity * 100
 
 
+def gaussian_normalize(data):
+    mean = np.mean(data)
+    std_dev = np.std(data)
+    normalized_data = (data - mean) / std_dev
+    return normalized_data
+
+
 def component(matrix):
     matrix = np.array(matrix)
 
     i, j = np.indices(matrix.shape)
     diff = i - j
 
-    # asm = np.sum(pow(matrix,2))
     contrast = np.sum(matrix * pow(diff, 2))
     homogeneity = np.sum(matrix / (1 + pow(diff, 2)))
 
     nonzero_elements = matrix[matrix != 0]
     entropy = -np.sum(nonzero_elements * np.log10(nonzero_elements))
 
-    return [contrast, homogeneity, entropy]
+    return gaussian_normalize([contrast, homogeneity, entropy])
 
 
 # Mengubah data RGB dari suatu image menjadi data histogram H, S, dan V.
@@ -161,6 +167,9 @@ def index(request):
     list_dir = os.listdir(JSON_ROOT)
 
     query = list()
+
+    page_obj = {}
+    time_taken = 0
 
     if "result.json" in list_dir:
         with open(JSON_ROOT + "result.json", "r") as f:
@@ -294,7 +303,7 @@ def index(request):
                                 query.append(
                                     {
                                         "file": "media/dataset/" + f,
-                                        "hist": vectorB,
+                                        "hist": vectorB.tolist(),
                                         "percentage": pers,
                                     }
                                 )
