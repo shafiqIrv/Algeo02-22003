@@ -6,7 +6,7 @@
 {% block title %}Concept{% endblock title %}
 {% block content %}
 <div>
-  <h1>Concept Page</h1>
+  <h1>How does our search engine work?</h1>
   <h2>Content-Based Information Retrieval (CBIR)</h2>
   <div class="teks_cbir">
     <p>
@@ -23,13 +23,13 @@
   <h2>Pencarian Berdasarkan Warna</h2>
   <div class="teks_warna">
     <p>
-      Ceritanya ini teks yang nge jelasin gimana teknis algoritma yang kita pake untuk mencocokkan suatu warna gambar dengan gambar lainnya</div>
+      Salah satu parameter penting dalam CBIR adalah warna, di mana distribusi warna pada citra digunakan sebagai dasar untuk perbandingan dan pencarian citra serupa. Metode CBIR dengan parameter warna dapat melibatkan ekstraksi fitur warna, seperti histogram warna, atau menggunakan representasi warna dalam bentuk ruang warna tertentu yang dalam hal ini kami menggunakan HSV. Pada saat melakukan pencarian, citra-citra dalam basis data diberi label dan diurutkan berdasarkan kesamaan distribusi warna.</div>
     </p>
   </div>
   <h2>Pencarian Berdasarkan Tekstur</h2>
   <div  class="teks_tekstur">
     <p>
-      Ceritanya ini teks yang nge jelasin gimana teknis algoritma yang kita pake untuk mencocokkan suatu tekstur gambar dengan gambar lainnya
+      Content-Based Image Retrieval (CBIR) dengan parameter tekstur berfokus pada penggunaan informasi tekstur sebagai dasar untuk mengidentifikasi dan mengambil citra serupa dalam suatu basis data. Tekstur mencakup pola-pola detail dan struktur dalam citra, dan dalam CBIR, metode ini mengekstrak fitur tekstur untuk memberikan representasi semantik citra. Kami menggunakan teknik ekstraksi fitur tekstur dengan co-occurrence matrix untuk menggambarkan karakteristik distribusi intensitas piksel dan hubungan spasialnya. Dalam fase pencarian, algoritma CBIR dengan parameter tekstur membandingkan citra-citra berdasarkan kemiripan fitur tekstur mereka, sehingga memungkinkan identifikasi dan pengambilan citra berdasarkan struktur dan pola yang ada di dalamnya.
     </p>
   </div>
 {% endblock content %}
