@@ -36,4 +36,3 @@ Tugas Besar Algeo 2
     py manage.py runserver
    ```
 5. Hold "Ctrl" button and click the link to go to website page
-![1700318258539](https://github.com/shafiqIrv/Algeo02-22003/assets/113454186/ebaab491-8a22-4d4b-9238-dfb3f732e13f)
