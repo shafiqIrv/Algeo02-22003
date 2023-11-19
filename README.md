@@ -6,6 +6,8 @@ Tugas Besar Algeo 2
 2. 13522005 - Ahmad Naufal Ramadan
 3. 13522015 - Yusuf Ardian Sandi
 
+## Our Video: https://youtu.be/_32MEZO2XNQ
+
 ## Getting Started
 ### Build With
 - [Python3](https://www.python.org/downloads/)
